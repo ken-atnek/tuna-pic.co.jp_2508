@@ -1,0 +1,120 @@
+@use "variable" as *;
+@use "svg" as *;
+.containerHeader {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+    padding-left: 2em;
+    padding-top: 1.4em;
+    .itemLogo {
+        max-width: 12.5rem;
+    }
+    article {
+        display: flex;
+        align-items: center;
+        padding-left: 1em;
+        padding-right: 2em;
+        padding-bottom: 1.6em;
+        border-bottom: 1px solid #a2b2b9;
+        width: 100%;
+        max-width: 70rem;
+        @include sp {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10vw 0;
+            background-color: #fff;
+            translate: 100vw;
+            transition: 0.3s ease-out;
+            opacity: 0;
+            gap: 4vw 0;
+            justify-content: center;
+            &.is-open {
+                translate: 0;
+                opacity: 1;
+            }
+        }
+        .itemMobileLogo {
+            display: none;
+        }
+        nav {
+            position: relative;
+            font-size: inherit;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+            gap: 0 2em;
+            .itemLink {
+                font-size: FZ(14);
+                letter-spacing: 0.1em;
+                font-weight: 500;
+                color: $dark-blue;
+                @include sp {
+                    padding-block: 3vw;
+                }
+            }
+        }
+    }
+}
+.hamburgerButton {
+    position: fixed;
+    top: 1vw;
+    right: 2vw;
+    width: 11vw;
+    aspect-ratio: 1;
+
+    // border: solid 2px #fff;
+    z-index: 100;
+    display: none;
+    background-color: $base-white;
+    border-radius: 2vw;
+
+    // border: 1px solid #000;
+    @include sp {
+        display: block;
+    }
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 60%;
+        height: 3px;
+        background-color: #505050;
+        transition: 0.3s ease-out;
+        &:nth-of-type(1) {
+            translate: -50% calc(-50% - 8px);
+        }
+        &:nth-of-type(2) {
+            translate: -50% -50%;
+        }
+        &:nth-of-type(3) {
+            translate: -50% calc(-50% + 8px);
+        }
+    }
+    &.is-open {
+        span {
+            transition: 0.3s ease-out;
+            &:nth-of-type(1) {
+                translate: -50% -50%;
+                rotate: 45deg;
+            }
+            &:nth-of-type(2) {
+                translate: 150% -50%;
+                opacity: 0;
+            }
+            &:nth-of-type(3) {
+                translate: -50% -50%;
+                rotate: -45deg;
+            }
+        }
+    }
+}
