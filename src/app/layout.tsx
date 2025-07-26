@@ -11,14 +11,21 @@ import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import { Poppins } from 'next/font/google';
 import { Zen_Kaku_Gothic_New } from 'next/font/google';
+import { Arvo } from 'next/font/google';
+
 const poppins = Poppins({
   weight: ['400', '500', '700'], // 必要なウェイトを指定
   subsets: ['latin'],
   display: 'swap',
 });
 
+const arvo = Arvo({
+  weight: ['700'],
+  subsets: ['latin'],
+  display: 'swap',
+});
 const zenKaku = Zen_Kaku_Gothic_New({
-  weight: ['400', '700'], // 必要なウェイトを指定
+  weight: ['400', '700', '500', '900'], // 必要なウェイトを指定
   subsets: ['latin'],
   display: 'swap',
 });
@@ -75,7 +82,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={`${poppins.className} ${zenKaku.className}`}>
+    <html
+      lang="ja"
+      className={`${poppins.className} ${zenKaku.className} ${arvo.className}`}
+    >
       <head>
         <meta
           name="format-detection"

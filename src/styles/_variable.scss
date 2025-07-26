@@ -25,7 +25,11 @@ $base-vw: calc($tilt * 100);
 }
 
 $articleMaxWidth: 117rem;
-
+$section-radius: 4em;
+@mixin section-radius {
+    border-top-left-radius: $section-radius;
+    border-top-right-radius: $section-radius;
+}
 /* =================================
  * フォント設定
  * ------------------------------ */
@@ -55,14 +59,18 @@ $articleMaxWidth: 117rem;
     font-weight: 400;
     font-style: normal;
 }
+@mixin Arvo {
+    font-family: "Arvo", serif;
+    font-weight: 700;
+    font-style: normal;
+}
 /* =================================
  * カラー変数
  * ------------------------------ */
 
 $base-white: #fff;
 $dark-blue: #002638;
-$base-black: #181818;
-$base-orange: #ffad00;
+$base-brown: #d3a358;
 
 /* =================================
  * レスポンシブ設定

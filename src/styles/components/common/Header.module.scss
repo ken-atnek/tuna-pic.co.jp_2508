@@ -1,3 +1,9 @@
+/* ===========================================
+ * 	ツナーズピクニック HEADER
+ * -----------------------------------------*/
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable custom-property-pattern */
 @use "variable" as *;
 @use "svg" as *;
 .containerHeader {
@@ -71,13 +77,11 @@
     right: 2vw;
     width: 11vw;
     aspect-ratio: 1;
-
     // border: solid 2px #fff;
     z-index: 100;
     display: none;
     background-color: $base-white;
     border-radius: 2vw;
-
     // border: 1px solid #000;
     @include sp {
         display: block;

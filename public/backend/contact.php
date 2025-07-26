@@ -3,8 +3,8 @@
 * お問い合せフォーム
 * URL:public/backend/contact.php
 * Referenced in: /page.tsx,
- * Created: 2025-07-12
- * Last updated: 2025-07-15
+* Created: 2025-06-09
+* Last updated: 2025-07-15
 * ======================================= */
 
 
@@ -22,12 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$address = isset($_POST["address"]) ? trim($_POST["address"]) : "";
 	$building = isset($_POST["building"]) ? trim($_POST["building"]) : "";
 	$message = isset($_POST["message"]) ? trim($_POST["message"]) : "";
-	$listItem = isset($_POST["listItem"]) ? trim($_POST["listItem"]) : "";
-	// 画像ファイル名を取得
-	$imageName = '';
-	if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
-		$imageName = $_FILES['image']['name'];
-	}
 	if (empty($name) || empty($email) || empty($phone) || empty($post) || empty($prefecture) || empty($city) || empty($message)) {
 		echo json_encode(["success" => false, "error" => "必須項目を入力してください"]);
 		exit;
@@ -35,17 +29,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 	// 📩 **メールの設定**
 	// $to = "ken.atnek@gmail.com";
-	$to = "horizouen-kumamoto@sge.bbiq.jp";
-	$to_name = "堀造園";
+	$to = "spa85cx9@watch.ocn.ne.jp";
+	$to_name = "西川塗装";
 	$send_date = date("Y/n/j-H:i", time());
-	$from_name = "堀造園 お問い合わせ";
-	$from_email = "contact@horizouen-kumamoto.com";  //
+	$from_name = "西川塗装 お問い合わせ";
+	$from_email = "contact@nishikawatoso.com";  //
 	// **エンコーディング設定**
 	$orgEncoding = mb_internal_encoding();
 	mb_language("uni");
 	mb_internal_encoding('UTF-8');
 
 	// **ヘッダー作成**
+	// $header_from = 'From: "' . mb_encode_mimeheader($name, 'ISO-2022-JP') . '" <no-reply@demo-nishikawatoso.tuna-pic.co.jp>' . "\r\n";
+	// $header_from .= 'Reply-To: ' . $email;
 
 	$header_from = 'From: "' . mb_encode_mimeheader($from_name, 'ISO-2022-JP') . '" <' . $from_email . '>' . "\r\n";
 	$header_from .= 'Reply-To: ' . $email;
@@ -62,10 +58,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$mail_body .= "◎住所\n";
 	$mail_body .= "〒{$post}\n";
 	$mail_body .= "{$prefecture} {$city} {$address} {$building}\n";
-	// 添付画像ファイル名
-	// $mail_body .= "◎添付画像ファイル名\n{$imageName}\n";
-	$mail_body .= "◎お問い合わせ（選択式）\n{$listItem}\n";
 	$mail_body .= "--------------------\n";
+
 	$mail_body .= "【お問い合わせ内容】\n{$message}\n\n";
 	$mail_body .= "--------------------\n";
 	$mail_body .= $send_date . "\n";

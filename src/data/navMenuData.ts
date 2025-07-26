@@ -12,9 +12,9 @@ export type NavMenuItem = {
 
 export const navMenu: NavMenuItem[] = [
   { href: '/', label: 'TOP' },
-  { href: '/', label: 'VISION' },
-  { href: '/', label: 'ABOUT US' },
-  { href: '/', label: 'CLiENT' },
-  { href: '/', label: 'PROFILE' },
-  { href: '/', label: 'CONTACT' },
+  { href: '/#ContainerVision', label: 'VISION' },
+  { href: '/#ContainerAboutUs', label: 'ABOUT US' },
+  { href: '/#ContainerProfile', label: 'PROFILE' },
+  { href: '/#containerClient', label: 'CLiENT' },
+  { href: '/#ContainerContact', label: 'CONTACT' },
 ];
