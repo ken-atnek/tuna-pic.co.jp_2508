@@ -9,6 +9,7 @@ import { navMenu } from '@/data/navMenuData';
 import styles from '@/styles/components/common/Header.module.scss';
 import { useEffect, useState, useRef } from 'react';
 import Logo from '@/assets/images/logo-dark.svg';
+import LogoMobile from '@/assets/images/logo.svg';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -52,13 +53,22 @@ const Header = () => {
       <div className={styles.itemLogo}>
         <Image src={Logo} alt="ツナーズピクニックのロゴ" />
       </div>
-      <article>
+      <article
+        className={`${isOpen ? styles['is-open'] : ''} ${
+          !isOpen ? styles.closing : ''
+        }`}
+      >
         <div className={styles.itemMobileLogo}>
-          <Image src={Logo} alt="ツナーズピクニックのロゴ" />
+          <Image src={LogoMobile} alt="ツナーズピクニックのロゴ" />
         </div>
         <nav>
           {navMenu.map((item) => (
-            <Link key={item.label} href={item.href} className={styles.itemLink}>
+            <Link
+              key={item.label}
+              href={item.href}
+              className={styles.itemLink}
+              onClick={closeMenu}
+            >
               {item.label}
             </Link>
           ))}
@@ -74,7 +84,6 @@ const Header = () => {
         aria-label="メニューを開閉"
         ref={buttonRef}
       >
-        <span></span>
         <span></span>
         <span></span>
       </button>

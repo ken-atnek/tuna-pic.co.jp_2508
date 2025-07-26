@@ -90,7 +90,11 @@ const ContainerAboutUs = () => {
       <h2>
         abo<i>ut</i>us
       </h2>
-      <h3>アイデアをカタチに、地域にチカラを。</h3>
+      <h3>
+        アイデアをカタチに、
+        <br className="sp" />
+        地域にチカラを。
+      </h3>
       <p className={styles.catch}>
         新規事業の立ち上げ支援、WEBサイトや動画コンテンツの制作、業務システムの開発、そしてプロモーション戦略の設計まで。
         <br />

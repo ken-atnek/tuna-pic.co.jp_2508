@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: false,
   },
+
   sassOptions: {
     includePaths: [path.join(__dirname, 'src/styles')], // ここでルートを設定
   },

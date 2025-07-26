@@ -10,7 +10,7 @@ import '@/styles/globals.scss';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import { Poppins } from 'next/font/google';
-import { Zen_Kaku_Gothic_New } from 'next/font/google';
+// import { Zen_Kaku_Gothic_New } from 'next/font/google';
 import { Arvo } from 'next/font/google';
 
 const poppins = Poppins({
@@ -24,11 +24,11 @@ const arvo = Arvo({
   subsets: ['latin'],
   display: 'swap',
 });
-const zenKaku = Zen_Kaku_Gothic_New({
-  weight: ['400', '700', '500', '900'], // 必要なウェイトを指定
-  subsets: ['latin'],
-  display: 'swap',
-});
+// const zenKaku = Zen_Kaku_Gothic_New({
+//   weight: ['400', '700', '500', '900'], // 必要なウェイトを指定
+//   subsets: ['latin'],
+//   display: 'swap',
+// });
 // 実際の本番環境かどうかを判定
 const isRealProduction = process.env.NEXT_PUBLIC_IS_REAL_PROD === 'true';
 
@@ -82,14 +82,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="ja"
-      className={`${poppins.className} ${zenKaku.className} ${arvo.className}`}
-    >
+    <html lang="ja" className={`${poppins.className}${arvo.className}`}>
       <head>
         <meta
           name="format-detection"
           content="telephone=no, address=no, email=no"
+        />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap"
+          rel="stylesheet"
         />
       </head>
       <body>

@@ -12,13 +12,20 @@ const ContainerVision = () => {
   return (
     <section className={styles.containerVision} id="ContainerVision">
       <p>
-        クライアントと歩む、Mission達成への道。
+        クライアントと歩む、
+        <br className="sp" />
+        Mission達成への道。
         <br />
-        クライアントと共に、そのすべてのプロセスを楽しむ。
+        クライアントと共に、
+        <br className="sp" />
+        そのすべてのプロセスを楽しむ。
         <br />
         楽しむ事こそチームの力。
       </p>
-      <div className={styles.sidebarH1}>TUNA’S PICNIC.inc</div>
+      <div className={styles.sidebarH1}>
+        <i>TUNA’S</i>
+        <i>PICNIC.inc</i>
+      </div>
       <h1>株式会社ツナーズピクニック</h1>
       <h2>
         vis<i>ion</i>

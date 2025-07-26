@@ -15,9 +15,16 @@
     gap: 2em 0;
     padding-top: 14em;
     padding-bottom: 8em;
+    @include sp {
+        padding-top: 50vw;
+        padding-bottom: 16vw;
+    }
     h2 {
         color: #fff;
         top: 1.5em;
+        @include sp {
+            top: 14vw;
+        }
     }
     article {
         max-width: 68rem;
@@ -26,7 +33,7 @@
             display: flex;
             flex-direction: column;
             @include sp {
-                padding: 6vw 4vw;
+                padding: 0;
             }
             .blockForm {
                 position: relative;
@@ -59,6 +66,7 @@
                     @include sp {
                         display: flex;
                         flex-direction: column;
+                        gap: 4vw 0;
                     }
 
                     // inputタグ初期化
@@ -78,7 +86,7 @@
                         min-height: 18lh;
                         field-sizing: content;
                         @include sp {
-                            min-height: 10lh;
+                            min-height: 20lh;
                         }
                     }
                     select,
@@ -125,6 +133,7 @@
                             font-size: FZ(16);
                             display: flex;
                             padding-top: 1.2em;
+
                             // &.formRequired {
                             //     &::after {
                             //         content: "*";
@@ -140,6 +149,9 @@
                             &.replyMethod {
                                 width: 50%;
                                 position: relative;
+                                @include sp {
+                                    width: 100%;
+                                }
                                 &::after {
                                     content: "";
                                     position: absolute;
@@ -158,6 +170,11 @@
                         display: grid;
                         grid-template-columns: repeat(2, 1fr);
                         align-items: center;
+                        @include sp {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 6vw 0;
+                        }
                         .wrapRadio {
                             font-size: inherit;
                             color: $dark-blue;

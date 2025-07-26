@@ -1,6 +1,6 @@
 /* ===========================================
  * 	ツナーズピクニック FOOTER
- * -----------------------------------------*/
+ * ----------------------------------------- */
 /* stylelint-disable no-descending-specificity */
 /* stylelint-disable keyframes-name-pattern */
 /* stylelint-disable custom-property-pattern */
@@ -18,19 +18,25 @@
     @include section-radius;
     @include sp {
         padding: 8vw 0 4vw;
+        justify-content: center;
     }
     .itemLogo {
         max-width: 10rem;
+        @include sp {
+            display: none;
+        }
     }
     nav {
         position: relative;
         font-size: inherit;
-        display: flex;
         flex: 1;
         display: flex;
         justify-content: space-between;
         max-width: 70rem;
         margin-left: auto;
+        @include sp {
+            display: none;
+        }
         .itemLink {
             font-size: FZ(14);
             font-weight: 500;

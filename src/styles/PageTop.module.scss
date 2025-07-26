@@ -5,6 +5,7 @@
 @use "svg" as *;
 /* stylelint-disable no-descending-specificity */
 /* stylelint-disable keyframes-name-pattern */
+// stylelint-disable scss/double-slash-comment-whitespace-inside
 /* stylelint-disable custom-property-pattern */
 // このファイル全体のルールを無効にする
 
@@ -15,9 +16,17 @@
     gap: 2em 0;
     padding-top: 10em;
     padding-bottom: 5em;
+    @include sp {
+        padding-top: 18vw;
+        padding-bottom: 8vw;
+        gap: 4vw 0;
+    }
     h2 {
         color: #fff;
         top: 0.5em;
+        @include sp {
+            top: 6vw;
+        }
     }
     p {
         position: relative;
@@ -26,17 +35,31 @@
         font-size: FZ(34);
         text-align: center;
         line-height: 1.6em;
+        @include sp {
+            font-size: FZ(22);
+        }
     }
     .sidebarH1 {
         @include Arvo;
         font-size: FZ(100);
         margin-top: 0.7em;
+        display: flex;
+        align-items: center;
+        gap: 0 0.2em;
+        @include sp {
+            font-size: FZ(50);
+            flex-direction: column;
+        }
     }
     h1 {
         font-size: FZ(28);
         font-weight: 500;
+        @include sp {
+            font-size: FZ(18);
+        }
     }
 }
+
 /* =================================
  * MOVIE
  * ------------------------------ */
@@ -44,7 +67,13 @@
     min-height: 77rem;
     background-color: $dark-blue;
     @include section-radius;
+    @include sp {
+        order: -1;
+        min-height: 60vw;
+        margin-top: 8vw;
+    }
 }
+
 /* =================================
  * ABOUT US
  * ------------------------------ */
@@ -52,15 +81,28 @@
     padding-top: 8em;
     padding-bottom: 5em;
     gap: 4em 0;
+    @include sp {
+        padding-top: 18vw;
+        padding-bottom: 16vw;
+        gap: 6vw 0;
+    }
     h2 {
         color: #fff;
         top: -0.5em;
+        @include sp {
+            top: 6vw;
+        }
     }
     h3 {
         font-size: FZ(32);
         font-weight: 700;
         position: relative;
         z-index: 1;
+        @include sp {
+            font-size: FZ(22);
+            text-align: center;
+            line-height: 1.6em;
+        }
     }
     .catch {
         position: relative;
@@ -70,6 +112,11 @@
         line-height: 2.3em;
         max-width: 38em;
         text-align: justify;
+        @include sp {
+            max-width: unset;
+            font-size: FZ(16);
+            line-height: 1.8em;
+        }
     }
     ul {
         position: relative;
@@ -80,6 +127,11 @@
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 1fr auto;
         gap: 0 1em;
+        @include sp {
+            grid-template-columns: unset;
+            grid-auto-flow: row;
+            gap: 4vw 0;
+        }
         li {
             position: relative;
             font-size: inherit;
@@ -92,6 +144,13 @@
             background-size: cover;
             background-position: center;
             background-color: $dark-blue;
+            @include sp {
+                gap: unset;
+                height: 60vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
             &::before {
                 content: "";
                 position: absolute;
@@ -118,12 +177,15 @@
                 top: 0.7em;
                 right: 0.5em;
                 color: #fff;
-                writing-mode: vertical-rl; //縦書き
-                text-orientation: upright; //縦書き英数回転
-                font-feature-settings: initial; //左詰め解除
+                writing-mode: vertical-rl; // 縦書き
+                text-orientation: upright; // 縦書き英数回転
+                font-feature-settings: initial; // 左詰め解除
                 font-weight: 700;
                 font-size: FZ(26);
                 height: max-content;
+                @include sp {
+                    font-size: FZ(20);
+                }
                 i {
                     display: inline-block;
                     transform: rotate(-90deg);
@@ -143,10 +205,14 @@
                 z-index: 1;
                 font-size: FZ(18);
                 line-height: 1.6em;
+                @include sp {
+                    font-size: FZ(16);
+                }
             }
         }
     }
 }
+
 /* =================================
  * PROFILE
  * ------------------------------ */
@@ -154,8 +220,13 @@
     padding-top: 18em;
     padding-bottom: 8em;
     background-color: $dark-blue;
-    @include section-radius;
     gap: 10em 0;
+    @include section-radius;
+    @include sp {
+        gap: 10vw 0;
+        padding-top: 46vw;
+        padding-bottom: 16vw;
+    }
     h2 {
         color: #fff;
         top: 0.5em;
@@ -163,6 +234,10 @@
     .itemLogo {
         width: 100%;
         max-width: 60rem;
+        @include sp {
+            max-width: unset;
+            width: 50vw;
+        }
     }
     article {
         align-self: center;
@@ -171,10 +246,17 @@
         flex-direction: column;
         width: max-content;
         gap: 2em 0;
+        @include sp {
+            width: 100%;
+        }
         .name {
             font-size: FZ(30);
             font-weight: 700;
             letter-spacing: 0.1em;
+            @include sp {
+                font-size: FZ(20);
+                align-self: center;
+            }
         }
         .boxInfo {
             position: relative;
@@ -182,12 +264,19 @@
             display: grid;
             grid-template-columns: auto 1fr;
             gap: 2em 4em;
+            @include sp {
+                gap: 4vw 0;
+                margin-top: 10vw;
+            }
             dl {
                 position: relative;
                 font-size: inherit;
                 display: flex;
                 flex-direction: column;
                 gap: 0.3em 0;
+                @include sp {
+                    grid-column: span 2;
+                }
                 dt {
                     color: $base-brown;
                     font-weight: 500;
@@ -218,6 +307,9 @@
                 position: relative;
                 font-size: FZ(18);
                 padding-left: 1.2em;
+                @include sp {
+                    font-size: FZ(16);
+                }
                 &::before {
                     content: "";
                     position: absolute;
@@ -233,6 +325,7 @@
         }
     }
 }
+
 /* =================================
  *  CLIENT
  * ------------------------------ */
@@ -241,17 +334,24 @@
     padding-bottom: 8em;
     gap: 4em 0;
     background-color: $dark-blue;
+    @include sp {
+        padding-top: 46vw;
+        padding-bottom: 16vw;
+    }
     &::before {
         content: "";
         position: absolute;
         inset: 0;
-        background-color: #ffffff;
+        background-color: #fff;
         z-index: +2;
         @include section-radius;
     }
     h2 {
         top: 0.5em;
         z-index: 2;
+        @include sp {
+            top: 14vw;
+        }
     }
     ul {
         position: relative;
@@ -262,6 +362,10 @@
         font-size: inherit;
         gap: 0 4em;
         z-index: 2;
+        @include sp {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0 2vw;
+        }
         li {
             position: relative;
             font-size: inherit;
@@ -269,6 +373,9 @@
             display: grid;
             grid-template-rows: subgrid;
             gap: 0.5em 0;
+            @include sp {
+                gap: unset;
+            }
             a {
                 position: absolute;
                 inset: 0;
@@ -288,9 +395,20 @@
                 color: #959595;
                 font-size: FZ(14);
                 text-align: center;
+                @include sp {
+                    font-size: FZ(12);
+                }
             }
             &:nth-of-type(n + 5) {
                 margin-top: 7em;
+                @include sp {
+                    margin-top: unset;
+                }
+            }
+            &:nth-of-type(n + 4) {
+                @include sp {
+                    margin-top: 14vw;
+                }
             }
         }
     }
