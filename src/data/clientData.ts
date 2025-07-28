@@ -40,12 +40,7 @@ export const clientData: ClientBanner[] = [
     url: 'https://www.kurokawaonsen.or.jp/',
     width: 80,
   },
-  {
-    title: '北里柴三郎顕彰記念サイト',
-    image: '/images/client/kitazato.webp',
-    url: 'https://kitazato-memorial.com//',
-    width: 80,
-  },
+
   {
     title: 'ふもと旅館',
     image: '/images/client/fumoto-ryokan.webp',
@@ -73,6 +68,12 @@ export const clientData: ClientBanner[] = [
     image: '/images/client/rien.webp',
     url: 'http://enai.co.jp/',
     width: 85,
+  },
+  {
+    title: '徳永琴教室',
+    image: '/images/client/tokunaga-koto.webp',
+    url: 'https://www.koto-suimei.com/',
+    width: 80,
   },
   {
     title: 'ももの木訪問看護ステーション',
@@ -119,17 +120,5 @@ export const clientData: ClientBanner[] = [
     title: '熊本市中央公民館',
     image: '/images/client/chouou-kouminkan.webp',
     url: 'https://www.shirakawa-chuo-cc.com/',
-  },
-  {
-    title: '熊日看護師&<br />医療従事者就職ガイダンス',
-    image: '/images/client/kangoshi-guidance.webp',
-    url: 'https://kangoshi-guidance.com/',
-    width: 100,
-  },
-  {
-    title: '徳永琴教室',
-    image: '/images/client/tokunaga-koto.webp',
-    url: 'https://www.koto-suimei.com/',
-    width: 80,
   },
 ];

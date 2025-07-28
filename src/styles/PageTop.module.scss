@@ -17,7 +17,7 @@
     padding-top: 10em;
     padding-bottom: 5em;
     @include sp {
-        padding-top: 18vw;
+        padding-top: 30vw;
         padding-bottom: 8vw;
         gap: 4vw 0;
     }
@@ -25,7 +25,7 @@
         color: #fff;
         top: 0.5em;
         @include sp {
-            top: 6vw;
+            top: 4vw;
         }
     }
     p {
@@ -36,7 +36,7 @@
         text-align: center;
         line-height: 1.6em;
         @include sp {
-            font-size: FZ(22);
+            font-size: FZ(18);
         }
     }
     .sidebarH1 {
@@ -49,6 +49,7 @@
         @include sp {
             font-size: FZ(50);
             flex-direction: column;
+            margin-top: 2vw;
         }
     }
     h1 {
@@ -310,7 +311,7 @@
                 font-size: FZ(18);
                 padding-left: 1.2em;
                 @include sp {
-                    font-size: FZ(16);
+                    font-size: FZ(18);
                 }
                 &::before {
                     content: "";
@@ -398,7 +399,7 @@
                 font-size: FZ(14);
                 text-align: center;
                 @include sp {
-                    font-size: FZ(12);
+                    font-size: 2.4vw;
                 }
             }
             &:nth-of-type(n + 5) {

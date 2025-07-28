@@ -12,9 +12,7 @@ const ContainerVision = () => {
   return (
     <section className={styles.containerVision} id="ContainerVision">
       <p>
-        クライアントと歩む、
-        <br className="sp" />
-        Mission達成への道。
+        クライアントと歩む、Mission達成への道。
         <br />
         クライアントと共に、
         <br className="sp" />
