@@ -10,6 +10,9 @@ import styles from '@/styles/PageTop.module.scss';
 import { useMemo } from 'react';
 import type { StaticImageData } from 'next/image';
 import About01 from '@/assets/images/about01.webp';
+import About02 from '@/assets/images/about02.webp';
+import About03 from '@/assets/images/about03.webp';
+import About04 from '@/assets/images/about04.webp';
 type AboutItem = {
   image: StaticImageData;
   title: React.ReactNode;
@@ -36,7 +39,7 @@ const ContainerAboutUs = () => {
       {
         title: 'クリエイティブ',
         titleEn: 'CREATIVE',
-        image: About01,
+        image: About02,
         description: (
           <>
             ＷＥＢサイト制作・運営
@@ -56,7 +59,7 @@ const ContainerAboutUs = () => {
             DEVELOPMENT
           </>
         ),
-        image: About01,
+        image: About03,
         description: (
           <>
             業務効率化を目的とした
@@ -73,7 +76,7 @@ const ContainerAboutUs = () => {
           </>
         ),
         titleEn: 'PROMOTION',
-        image: About01,
+        image: About04,
         description: (
           <>
             デジタルマーケティング・

@@ -64,9 +64,11 @@
  * MOVIE
  * ------------------------------ */
 .containerMovie {
-    min-height: 77rem;
-    background-color: $dark-blue;
-    @include section-radius;
+    padding-inline: 0;
+    video {
+        font-size: inherit;
+        @include section-radius;
+    }
     @include sp {
         order: -1;
         min-height: 60vw;
