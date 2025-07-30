@@ -28,7 +28,7 @@ const DetailForm = () => {
   const handleConfirm = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!Name || !email || !phone || !message) {
+    if (!Name || !email || !phone || !message || !reply) {
       setStatus('必須項目を入力してください');
       return;
     }
@@ -59,7 +59,7 @@ const DetailForm = () => {
 
     try {
       const response = await fetch(
-        'https://nishikawatoso.com/backend/contact.php',
+        'https://www.tuna-pic.co.jp/backend/contact.php',
         {
           method: 'POST',
           body: formData,
@@ -122,16 +122,6 @@ const DetailForm = () => {
                     <div>{email}</div>
                   </dd>
                 </dl>
-                {/* <dl>
-                  <dt>住所</dt>
-                  <dd>
-                    <div>〒{post}</div>
-                    <div>{prefecture}</div>
-                    <div>{city}</div>
-                    <div>{address}</div>
-                    <div>{building}</div>
-                  </dd>
-                </dl> */}
                 <div className={styles.boxMessage}>{message}</div>
                 <div className={styles.box_btn}>
                   <button type="button" onClick={handleEdit}>

@@ -5,7 +5,8 @@
  * Created: 2025-07-12
  * Last updated: 2025-07-12
  * ======================================= */
-
+'use client';
+import { useScrollTrigger } from '@/hooks/useScrollTrigger';
 import styles from '@/styles/PageTop.module.scss';
 import { useMemo } from 'react';
 import type { StaticImageData } from 'next/image';
@@ -20,6 +21,7 @@ type AboutItem = {
   description: React.ReactNode;
 };
 const ContainerAboutUs = () => {
+  const { ref, isVisible } = useScrollTrigger<HTMLLIElement>();
   const ListData: AboutItem[] = useMemo(
     () => [
       {
@@ -69,12 +71,7 @@ const ContainerAboutUs = () => {
         ),
       },
       {
-        // 「ー」だけ横向きにするために <i> で囲んでいます
-        title: (
-          <>
-            プロモ<i>ー</i>ション
-          </>
-        ),
+        title: <>プロモーション</>,
         titleEn: 'PROMOTION',
         image: About04,
         description: (
@@ -109,7 +106,14 @@ const ContainerAboutUs = () => {
             '--bg-image': `url(${item.image.src})`,
           } as React.CSSProperties;
           return (
-            <li key={index} style={liStyle}>
+            <li
+              key={index}
+              style={liStyle}
+              className={`${styles.slideIn} ${
+                isVisible ? styles['is-active'] : ''
+              }`}
+              ref={ref}
+            >
               <h4>{item.title}</h4>
               <h5>{item.titleEn}</h5>
               <p>{item.description}</p>
