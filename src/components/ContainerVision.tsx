@@ -5,10 +5,12 @@
  * Created: 2025-07-25
  * Last updated: 2025-07-25
  * ======================================= */
-
+'use client';
+import { useScrollTrigger } from '@/hooks/useScrollTrigger';
 import styles from '@/styles/PageTop.module.scss';
-
 const ContainerVision = () => {
+  const { ref, isVisible } = useScrollTrigger<HTMLHeadingElement>();
+
   return (
     <section className={styles.containerVision} id="ContainerVision">
       <p>
@@ -20,7 +22,10 @@ const ContainerVision = () => {
         <br />
         楽しむ事こそチームの力。
       </p>
-      <div className={styles.sidebarH1}>
+      <div
+        className={`${styles.sidebarH1} ${isVisible ? styles['is-active'] : ''}`}
+        ref={ref}
+      >
         <i>TUNA’S</i>
         <i>PICNIC.inc</i>
       </div>

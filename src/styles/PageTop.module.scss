@@ -46,10 +46,29 @@
         display: flex;
         align-items: center;
         gap: 0 0.2em;
+        transition: 4s ease-out;
+        --areaColor: #0d2aa1;
+        background: linear-gradient(
+            -40deg,
+            rgba($dark-blue, 1),
+            rgba($dark-blue, 1) 45%,
+            var(--areaColor) 45%,
+            var(--areaColor) 50%,
+            rgba($dark-blue, 1) 50%
+        );
+        background-clip: text;
+        background-size: 300% 100%;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-position: right center;
+
         @include sp {
             font-size: FZ(50);
             flex-direction: column;
             margin-top: 2vw;
+        }
+        &.is-active {
+            background-position: left center;
         }
     }
     h1 {

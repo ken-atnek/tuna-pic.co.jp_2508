@@ -15,6 +15,6 @@ export const navMenu: NavMenuItem[] = [
   { href: '/#ContainerVision', label: 'VISION' },
   { href: '/#ContainerAboutUs', label: 'ABOUT US' },
   { href: '/#ContainerProfile', label: 'PROFILE' },
-  { href: '/#containerClient', label: 'CLiENT' },
+  { href: '/#ContainerClient', label: 'CLiENT' },
   { href: '/#ContainerContact', label: 'CONTACT' },
 ];
