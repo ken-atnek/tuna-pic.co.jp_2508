@@ -26,7 +26,7 @@ const ContainerProfile = () => {
           <dl>
             <dt>ADD</dt>
             <dd>
-              <address>熊本市中央区下通2丁目5-18-2F</address>
+              <address>熊本市西区城山下代1丁目3-1-B</address>
             </dd>
           </dl>
           <dl>

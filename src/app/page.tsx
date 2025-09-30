@@ -17,9 +17,9 @@ const isRealProduction = process.env.NEXT_PUBLIC_IS_REAL_PROD === 'true';
 
 export const generateMetadata = (): Metadata => {
   return {
-    title: '株式会社ツナーズピクニック',
+    title: '株式会社ツナーズピクニック｜Web×システム×プロモーション',
     description: isRealProduction
-      ? '株式会社ツナーズピクニックはクライアントと歩む、Mission達成への道。クライアントと共に、そのすべてのプロセスを楽しむ。楽しむ事こそチームの力。'
+      ? '株式会社ツナーズピクニックは、熊本を拠点としながら、クライアントと共にMission達成へと歩むクリエイティブ集団です。新規事業の立ち上げからWeb制作・システム開発・プロモーション設計までを一括で手がけ、成果と向き合いながら寄り添います。また、私たちはプロセスも大切に。「楽しむ」ことを軸に、チームの力を引き出し、共に成長します。'
       : undefined,
   };
 };

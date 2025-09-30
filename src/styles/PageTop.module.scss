@@ -58,10 +58,9 @@
         );
         background-clip: text;
         background-size: 300% 100%;
-        -webkit-background-clip: text;
+        background-clip: text;
         color: transparent;
         background-position: right center;
-
         @include sp {
             font-size: FZ(50);
             flex-direction: column;
@@ -441,7 +440,7 @@
             }
             &:nth-of-type(n + 4) {
                 @include sp {
-                    margin-top: 14vw;
+                    margin-top: 6vw;
                 }
             }
         }

@@ -53,9 +53,9 @@ export const metadata: Metadata = {
       ],
     },
   }),
-  title: ' 株式会社ツナーズピクニック',
+  title: ' 株式会社ツナーズピクニック｜Web×システム×プロモーション',
   description: isRealProduction
-    ? '株式会社ツナーズピクニックのディスクリプション'
+    ? '熊本を拠点とするTUNA’S PICNIC（ツナーズピクニック）は、新規事業の立ち上げからWeb制作、システム開発、プロモーション設計までを一括対応。寄り添いながら成果を生み出すクリエイティブ集団です。'
     : undefined,
   robots: isRealProduction ? 'index, follow' : 'noindex, nofollow',
   icons: {
