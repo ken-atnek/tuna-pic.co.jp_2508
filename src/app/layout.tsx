@@ -12,6 +12,7 @@ import Footer from '@/components/common/Footer';
 import { Poppins } from 'next/font/google';
 // import { Zen_Kaku_Gothic_New } from 'next/font/google';
 import { Arvo } from 'next/font/google';
+import Script from 'next/script';
 
 const poppins = Poppins({
   weight: ['400', '500', '700'], // 必要なウェイトを指定
@@ -93,6 +94,19 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap"
           rel="stylesheet"
         />
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-GYMTD4Z2M1"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GYMTD4Z2M1');
+          `}
+        </Script>
       </head>
       <body>
         <Header />
