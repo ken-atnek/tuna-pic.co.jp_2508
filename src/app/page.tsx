@@ -20,6 +20,23 @@ export const generateMetadata = (): Metadata => {
     title: '株式会社ツナーズピクニック｜Web×システム×プロモーション',
     description: isRealProduction
       ? '株式会社ツナーズピクニック(ツナピク)は、熊本を拠点としながら、クライアントと共にMission達成へと歩むクリエイティブ集団です。新規事業の立ち上げからWeb制作・システム開発・プロモーション設計までを一括で手がけ、成果と向き合いながら寄り添います。また、私たちはプロセスも大切に。「楽しむ」ことを軸に、チームの力を引き出し、共に成長します。'
+      : '株式会社ツナーズピクニック - 開発環境',
+    keywords: isRealProduction
+      ? [
+          'ホームページ制作',
+          'Web制作',
+          'システム開発',
+          'プロモーション',
+          '熊本',
+          'ツナピク',
+        ]
+      : undefined,
+    openGraph: isRealProduction
+      ? {
+          title: '株式会社ツナーズピクニック',
+          description: '熊本を拠点とするクリエイティブ集団',
+          type: 'website',
+        }
       : undefined,
   };
 };

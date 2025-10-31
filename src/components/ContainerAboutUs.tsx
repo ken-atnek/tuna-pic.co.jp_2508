@@ -21,7 +21,7 @@ type AboutItem = {
   description: React.ReactNode;
 };
 const ContainerAboutUs = () => {
-  const { ref, isVisible } = useScrollTrigger<HTMLLIElement>();
+  const { ref, isVisible } = useScrollTrigger<HTMLUListElement>();
   const ListData: AboutItem[] = useMemo(
     () => [
       {
@@ -100,20 +100,13 @@ const ContainerAboutUs = () => {
         <br />
         私たちは各分野のプロフェッショナルが連携し、それぞれの強みを活かしながら、課題解決と価値創出に取り組んでいます。
       </p>
-      <ul>
+      <ul className={` ${isVisible ? styles['is-active'] : ''}`} ref={ref}>
         {ListData.map((item, index) => {
           const liStyle = {
             '--bg-image': `url(${item.image.src})`,
           } as React.CSSProperties;
           return (
-            <li
-              key={index}
-              style={liStyle}
-              className={`${styles.slideIn} ${
-                isVisible ? styles['is-active'] : ''
-              }`}
-              ref={ref}
-            >
+            <li key={index} style={liStyle}>
               <h4>{item.title}</h4>
               <h5>{item.titleEn}</h5>
               <p>{item.description}</p>
